@@ -1,2 +1,2 @@
-# bdp-platform
-Spring boot and spring cloud learning project.
+# Sofa-Ark
+Sofa-Ark learning project.
