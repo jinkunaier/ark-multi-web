@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>com.kingsoft</groupId>
+		<artifactId>ark-multi-web</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>web-host</artifactId>
+	
+	<dependencies>
+		<!-- 用于 JVM 服务调用 -->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>runtime-sofa-boot-plugin</artifactId>
+		</dependency>
+
+		<!--SOFAArk 和 Spring Boot 适配 -->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>sofa-ark-springboot-starter</artifactId>
+		</dependency>
+
+		<!--用于多 web 合并部署 -->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>web-ark-plugin</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+
+		<!-- web 应用 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!--health check -->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>healthcheck-sofa-boot-starter</artifactId>
+		</dependency>
+
+		<!--facade -->
+		<dependency>
+			<groupId>com.kingsoft</groupId>
+			<artifactId>facade</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.alipay.sofa</groupId>
+				<artifactId>sofa-ark-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<!--goal executed to generate executable-ark-jar -->
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<!--specify destination where executable-ark-jar will be saved, default 
+								saved to ${project.build.directory} -->
+							<outputDirectory>target</outputDirectory>
+							<!--default none -->
+							<arkClassifier>executable-ark</arkClassifier>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
