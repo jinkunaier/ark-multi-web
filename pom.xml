@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.alipay.sofa</groupId>
 		<artifactId>sofaboot-dependencies</artifactId>
-		<version>3.2.2</version>
+		<version>3.4.4</version>
 		<relativePath />
 	</parent>
 	<groupId>com.kingsoft</groupId>
@@ -22,5 +22,6 @@
 		<module>web-sub2</module>
 		<module>facade</module>
 		<module>provider</module>
+		<module>plugins</module>
 	</modules>
 </project>

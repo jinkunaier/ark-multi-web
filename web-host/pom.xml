@@ -8,7 +8,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>web-host</artifactId>
-	
+
 	<dependencies>
 		<!-- 用于 JVM 服务调用 -->
 		<dependency>
@@ -45,6 +45,13 @@
 		<dependency>
 			<groupId>com.kingsoft</groupId>
 			<artifactId>facade</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- plugin -->
+		<dependency>
+			<groupId>com.kingsoft</groupId>
+			<artifactId>ark-plugin-sample</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
