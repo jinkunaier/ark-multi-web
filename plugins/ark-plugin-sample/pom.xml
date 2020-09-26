@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>com.kingsoft</groupId>
+		<artifactId>plugins</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>ark-plugin-sample</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.kingsoft</groupId>
+			<artifactId>ark-plugin-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>sofa-ark-spi</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.alipay.sofa</groupId>
+				<artifactId>sofa-ark-plugin-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-cli</id>
+						<goals>
+							<goal>ark-plugin</goal>
+						</goals>
+
+						<configuration>
+
+							<!--can only configure no more than one activator -->
+							<activator>com.kingsoft.ark.sample.activator.SamplePluginActivator</activator>
+
+							<!-- configure exported class -->
+							<exported>
+								<!-- configure package-level exported class -->
+								<packages>
+									<package>org.springframework</package>
+									<package>com.kingsoft.ark.sample.common</package>
+								</packages>
+
+								<!-- configure class-level exported class -->
+								<classes>
+									<class>com.kingsoft.ark.sample.facade.SamplePluginService</class>
+								</classes>
+
+								<!-- configure exported resource -->
+								<resources>
+									<resource>Sample_Resource_Exported</resource>
+								</resources>
+							</exported>
+
+							<!--specify destination where ark-plugin will be saved, default saved 
+								to ${project.build.directory} -->
+							<outputDirectory>./target</outputDirectory>
+
+							<!--the specify dependency would not be contained in lib directory, 
+								but shaded in ark plugin -->
+							<shades>
+								<shade>com.kingsoft:ark-plugin-common:1.0.0</shade>
+							</shades>
+
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

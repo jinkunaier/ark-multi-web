@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.alipay.sofa</groupId>
 		<artifactId>sofaboot-dependencies</artifactId>
-		<version>3.4.4</version>
+		<version>3.2.2</version>
 		<relativePath />
 	</parent>
 	<groupId>com.kingsoft</groupId>
@@ -14,7 +14,7 @@
 	<packaging>pom</packaging>
 
 	<name>ark-multi-web</name>
-	<description>Template project for spring cloud learn.</description>
+	<description>Template project for sofa-ark learn.</description>
 
 	<modules>
 		<module>web-host</module>
