@@ -14,7 +14,7 @@
 	<packaging>pom</packaging>
 
 	<name>ark-multi-web</name>
-	<description>Template project for sofa-ark learn.</description>
+	<description>Template project for sofa-ark learning.</description>
 
 	<modules>
 		<module>web-host</module>
