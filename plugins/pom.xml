@@ -31,5 +31,6 @@
 	<modules>
 		<module>ark-plugin-common</module>
 		<module>ark-plugin-sample</module>
+		<module>runtime-sofa-boot-plugin</module>
 	</modules>
 </project>
